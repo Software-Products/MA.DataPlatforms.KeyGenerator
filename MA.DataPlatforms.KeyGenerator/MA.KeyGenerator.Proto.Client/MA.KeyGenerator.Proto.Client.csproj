@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>MA.KeyGenerator.Proto.Client</Title>
+		<Company>McLaren Applied</Company>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<Description>A .NET implementation of the MA Stream API Key Generator for client applications. The client requires an external Key Generator server to be set up (for example using the MA Key Generator docker image), running the Key Generator services.</Description>
+		<Authors>McLaren Applied</Authors>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.26.1" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.62.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.62.0">
+			<PrivateAssets>All</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MA.Streaming.KeyGenerator.Proto" Version="1.0.0.14-ci" GeneratePathProperty="true">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<Protobuf Include="$(PkgMA_Streaming_KeyGenerator_Proto)/ma/streaming/key_generator/**/*.proto" GrpcServices="Client" CompileOutputs="true" />
+	</ItemGroup>
+
+</Project>
