@@ -42,7 +42,10 @@ internal static class Program
                 logging.AddConsole();
             });
 
+        var loggingFolderProvider = new LoggingDirectoryProvider("");
+        builder.Services.AddTransient<ILoggingDirectoryProvider>(_ => loggingFolderProvider);
         builder.Services.AddSingleton<IKeyGeneratorService, KeyGeneratorService>();
+
         builder.Services.AddGrpc();
 
         var app = builder.Build();

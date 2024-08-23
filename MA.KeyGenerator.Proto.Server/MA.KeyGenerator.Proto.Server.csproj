@@ -15,12 +15,12 @@
 
 	<ItemGroup>
 		<PackageReference Include="Grpc.AspNetCore" Version="2.62.0" />
-		<PackageReference Include="MA.Common" Version="1.1.1.210-ci" />
+		<PackageReference Include="MA.Common" Version="*" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MA.Streaming.KeyGenerator.Proto" Version="1.0.0.14-ci" GeneratePathProperty="true">
+		<PackageReference Include="MA.Streaming.KeyGenerator.Proto" Version="*" GeneratePathProperty="true">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<Protobuf Include="$(PkgMA_Streaming_KeyGenerator_Proto)/ma/streaming/key_generator/**/*.proto" GrpcServices="Server" CompileOutputs="true" />

@@ -8,7 +8,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["MA.KeyGenerator.Proto.Server/MA.KeyGenerator.Proto.Server.csproj", "MA.KeyGenerator.Proto.Server/"]
 ARG NUGET_PAT
-RUN dotnet nuget add source "https://nuget.pkg.github.com/mat-docs/index.json" --name MA --username "docker" --password "$NUGET_PAT" --store-password-in-clear-text
+RUN dotnet nuget add source "https://mat-ocs.pkgs.visualstudio.com/_packaging/MAT/nuget/v3/index.json" --name MA --username "docker" --password "$NUGET_PAT" --store-password-in-clear-text
 RUN dotnet restore "./MA.KeyGenerator.Proto.Server/MA.KeyGenerator.Proto.Server.csproj" 
 COPY . .
 WORKDIR "/src/MA.KeyGenerator.Proto.Server"
