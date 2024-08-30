@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MA.Streaming.KeyGenerator.Proto" Version="1.0.0.14-ci" GeneratePathProperty="true">
+		<PackageReference Include="MA.Streaming.KeyGenerator.Proto" Version="*" GeneratePathProperty="true">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<Protobuf Include="$(PkgMA_Streaming_KeyGenerator_Proto)/ma/streaming/key_generator/**/*.proto" GrpcServices="Client" CompileOutputs="true" />
