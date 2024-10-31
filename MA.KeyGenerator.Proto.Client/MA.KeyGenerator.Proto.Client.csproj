@@ -10,7 +10,8 @@
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<Description>A .NET implementation of the MA Stream API Key Generator for client applications. The client requires an external Key Generator server to be set up (for example using the MA Key Generator docker image), running the Key Generator services.</Description>
 		<Authors>McLaren Applied</Authors>
-  </PropertyGroup>
+		<RepositoryUrl>https://github.com/mat-docs/packages</RepositoryUrl>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Google.Protobuf" Version="3.26.1" />
@@ -21,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MA.Streaming.KeyGenerator.Proto" Version="*" GeneratePathProperty="true">
+		<PackageReference Include="MA.Streaming.KeyGenerator.Proto" Version="1.3.3.23" GeneratePathProperty="true">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<Protobuf Include="$(PkgMA_Streaming_KeyGenerator_Proto)/ma/streaming/key_generator/**/*.proto" GrpcServices="Client" CompileOutputs="true" />
