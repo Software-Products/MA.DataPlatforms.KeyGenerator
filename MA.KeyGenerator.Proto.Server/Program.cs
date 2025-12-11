@@ -1,6 +1,6 @@
-// <copyright file="Program.cs" company="McLaren Applied Ltd.">
+// <copyright file="Program.cs" company="Motion Applied Ltd.">
 //
-// Copyright 2024 McLaren Applied Ltd
+// Copyright 2025 Motion Applied Ltd
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,13 +34,12 @@ internal static class Program
             ConfigureListenOptions
         );
 
-        builder.WebHost.ConfigureLogging(
-            logging =>
-            {
-                logging.ClearProviders();
-                logging.SetMinimumLevel(LogLevel.Warning);
-                logging.AddConsole();
-            });
+        builder.WebHost.ConfigureLogging(logging =>
+        {
+            logging.ClearProviders();
+            logging.SetMinimumLevel(LogLevel.Warning);
+            logging.AddConsole();
+        });
 
         var loggingFolderProvider = new LoggingDirectoryProvider("");
         builder.Services.AddTransient<ILoggingDirectoryProvider>(_ => loggingFolderProvider);
